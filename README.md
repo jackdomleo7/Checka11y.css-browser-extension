@@ -12,6 +12,10 @@
 
 ---
 
+👉 [Click here to go to the original Checka11y.css project](https://github.com/jackdomleo7/Checka11y.css)
+
+---
+
 # Checka11y.css - browser extension
 
 **A CSS stylesheet to quickly highlight a11y concerns.**

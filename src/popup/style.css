@@ -10,6 +10,8 @@ html {
 }
 
 body {
+  background-color: #fff;
+  color: #000;
   font-family: Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +25,25 @@ svg {
   height: 100%;
   pointer-events: none;
   width: 100%;
+}
+
+hr {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  border-top-color: #222;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #fff;
+  }
+
+  hr {
+    border-top-color: #eee;
+  }
 }
 
 /**
@@ -78,7 +99,7 @@ svg {
 }
 
 .toggle__input:checked ~ .toggle__slider {
-  background-color: royalblue;
+  background-color: dodgerblue;
 }
 
 .toggle__input:checked ~ .toggle__slider::before {
@@ -107,7 +128,7 @@ svg {
   background-color: dodgerblue;
   border: 1px solid transparent;
   border-radius: 0.3125rem;
-  box-shadow: 0 0.0625rem 0.125rem rgba(190, 190, 190, 0.5);
+  box-shadow: 0 0.0625rem 0.125rem rgba(63, 67, 74, 0.2);
   box-sizing: border-box;
   color: #fff;
   display: inline-flex;
@@ -121,9 +142,7 @@ svg {
 }
 
 .button:hover, .button:focus, .button:active {
-  box-shadow: 0 0.0625rem 0.125rem 0.125rem rgba(190, 190, 190, 0.5);
-  color: #fff;
-  opacity: 0.85;
+  box-shadow: 0 0.0625rem 0.125rem 0.125rem rgba(63, 67, 74, 0.2);
   text-decoration: none;
 }
 
@@ -167,6 +186,16 @@ svg {
 @media (prefers-reduced-motion: reduce) {
   .button--coffee:hover svg, .button--coffee:focus svg {
     transform: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    box-shadow: 0 0.0625rem 0.125rem rgba(23, 23, 26, 0.8);
+  }
+
+  .button:hover, .button:focus, .button:active {
+    box-shadow: 0 0.0625rem 0.125rem 0.125rem rgba(23, 23, 26, 0.8);
   }
 }
   

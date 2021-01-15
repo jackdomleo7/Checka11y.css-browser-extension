@@ -34,6 +34,16 @@ Browsers supported:
 - [Chromium](https://chrome.google.com/webstore/detail/checka11ycss/npkoehgjmnffjdaelommnfjkflenbfaa)
 - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/checka11y-css)
 
+<div align="center">
+  <img src="./assets/checka11y-extension.gif" alt="GIF example of Checka11y.css browser extension in use by toggling on and off the Checka11y.css stylesheet." />
+
+  <br/>
+
+  Light theme                                                 |  Dark theme
+  :----------------------------------------------------------:|:----------------------------------------------------------:
+  ![Checka11y.css light theme](./assets/checka11y-light.png)  |  ![Checka11y.css dark theme](./assets/checka11y-dark.png)
+</div>
+
 ---
 
 ## Dev

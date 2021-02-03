@@ -119,7 +119,8 @@ hr {
 .buttons {
   display: grid;
   gap: 0.5rem;
-  grid-template-areas: 'docs coffee'
+  grid-template-areas: 'coffee coffee'
+                       'docs codes'
                        'github github';
 }
 
@@ -148,6 +149,10 @@ hr {
 
 .button--docs {
   grid-area: docs;
+}
+
+.button--codes {
+  grid-area: codes;
 }
 
 .button--coffee {

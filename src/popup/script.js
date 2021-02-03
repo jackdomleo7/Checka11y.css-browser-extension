@@ -4,22 +4,25 @@ window.browser = (function () {
     window.chrome;
 })();
 
-function sendAction(type, checked) {
+function sendAction(type, displayStylesheet, disableWarnings) {
   browser.tabs.query({active: true, currentWindow: true}, tabs => {
-      browser.browserAction.setBadgeText({text: checked ? 'On' : '', tabId: tabs[0].id});
-      browser.tabs.sendMessage(tabs[0].id, {type: type, checked: checked});
+      browser.browserAction.setBadgeText({text: displayStylesheet ? 'On' : '', tabId: tabs[0].id});
+      browser.tabs.sendMessage(tabs[0].id, {type, displayStylesheet, disableWarnings});
   });
 }
 
 window.addEventListener('load', (event) => {
-  const toggle = document.getElementById('toggleStylesheet');
+  const displayStylesheetToggle = document.getElementById('displayStylesheet');
+  const disableWarningsToggle = document.getElementById('disableWarnings');
 
   browser.tabs.query({active: true, currentWindow: true}, tabs => {
-    browser.tabs.sendMessage(tabs[0].id, {type: 'isStylesheetSet'}, isStylesheetSet => {
-        toggle.checked = isStylesheetSet;
-        browser.browserAction.setBadgeText({text: isStylesheetSet ? 'On' : '', tabId: tabs[0].id});
+    browser.tabs.sendMessage(tabs[0].id, {type: 'isStylesheetSet'}, stylesheetHref => {
+      displayStylesheetToggle.checked = stylesheetHref != null;
+      disableWarningsToggle.checked = stylesheetHref.includes('checka11y-errors.css');
+      browser.browserAction.setBadgeText({text: stylesheetHref ? 'On' : '', tabId: tabs[0].id});
     });
   });
 
-  toggle.onchange = () => sendAction('toggleStylesheet', toggle.checked);
+  displayStylesheetToggle.onchange = () => sendAction('toggleStylesheet', displayStylesheetToggle.checked, disableWarningsToggle.checked);
+  disableWarningsToggle.onchange = () => sendAction('toggleStylesheet', displayStylesheetToggle.checked, disableWarningsToggle.checked);
 });

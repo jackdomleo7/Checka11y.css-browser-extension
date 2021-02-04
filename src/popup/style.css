@@ -47,11 +47,23 @@ hr {
 }
 
 /**
+  * Options
+  */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+/**
   * Switch
   */
 
 .toggle {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   max-width: 100%;
 }
@@ -104,6 +116,11 @@ hr {
 
 .toggle__input:checked ~ .toggle__slider::before {
   transform: translateX(1.875rem);
+}
+
+.toggle__input:disabled ~ .toggle__slider {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 
 @media (prefers-reduced-motion: reduce) {

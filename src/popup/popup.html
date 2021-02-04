@@ -7,13 +7,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie" />
 </head>
 <body>
-    <label class="toggle">
-        <span class="toggle__label">Toggle Checka11y.css<br/>on this tab</span>
-        <span class="toggle__toggle">
-            <input class="toggle__input" type="checkbox" id="toggleStylesheet" />
-            <span class="toggle__slider"></span>
-        </span>
-    </label>
+    <div class="options">
+        <label class="toggle">
+            <span class="toggle__label">Toggle Checka11y.css<br/>on this tab</span>
+            <span class="toggle__toggle">
+                <input class="toggle__input" type="checkbox" id="displayStylesheet" />
+                <span class="toggle__slider"></span>
+            </span>
+        </label>
+        <label class="toggle">
+            <span class="toggle__label">Disable warnings</span>
+            <span class="toggle__toggle">
+                <input class="toggle__input" type="checkbox" id="disableWarnings" />
+                <span class="toggle__slider"></span>
+            </span>
+        </label>
+    </div>
     <hr/>
     <small>Once applied, expect Checka11y.css to change the visual look and components. While this is unavoidable, Checka11y.css highlights HTML errors on the page.</small>
     <hr/>

@@ -4,16 +4,21 @@ window.browser = (function () {
     window.chrome;
 })();
 
-function sendAction(type, displayStylesheet, disableWarnings) {
-  browser.tabs.query({active: true, currentWindow: true}, tabs => {
-      browser.browserAction.setBadgeText({text: displayStylesheet ? 'On' : '', tabId: tabs[0].id});
-      browser.tabs.sendMessage(tabs[0].id, {type, displayStylesheet, disableWarnings});
-  });
-}
-
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
   const displayStylesheetToggle = document.getElementById('displayStylesheet');
   const disableWarningsToggle = document.getElementById('disableWarnings');
+
+  const setDisableWarningsDisabledState = () => {
+    disableWarningsToggle.disabled = !displayStylesheetToggle.checked;
+  };
+
+  const toggleStylesheet = () => {
+    browser.tabs.query({active: true, currentWindow: true}, tabs => {
+        browser.browserAction.setBadgeText({text: displayStylesheet ? 'On' : '', tabId: tabs[0].id});
+        browser.tabs.sendMessage(tabs[0].id, {type: 'toggleStylesheet', displayStylesheet: displayStylesheetToggle.checked, disableWarnings: disableWarningsToggle.checked});
+    });
+  }
+  
 
   browser.tabs.query({active: true, currentWindow: true}, tabs => {
     browser.tabs.sendMessage(tabs[0].id, {type: 'isStylesheetSet'}, stylesheetHref => {
@@ -24,12 +29,12 @@ window.addEventListener('load', (event) => {
     });
   });
 
-  disableWarningsToggle.disabled = !displayStylesheetToggle.checked;
+  setDisableWarningsDisabledState();
 
   displayStylesheetToggle.addEventListener('input', () => {
-    disableWarningsToggle.disabled = !displayStylesheetToggle.checked;
+    setDisableWarningsDisabledState();
   });
 
-  displayStylesheetToggle.onchange = () => sendAction('toggleStylesheet', displayStylesheetToggle.checked, disableWarningsToggle.checked);
-  disableWarningsToggle.onchange = () => sendAction('toggleStylesheet', displayStylesheetToggle.checked, disableWarningsToggle.checked);
+  displayStylesheetToggle.onchange = () => toggleStylesheet();
+  disableWarningsToggle.onchange = () => toggleStylesheet();
 });

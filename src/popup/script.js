@@ -18,9 +18,16 @@ window.addEventListener('load', (event) => {
   browser.tabs.query({active: true, currentWindow: true}, tabs => {
     browser.tabs.sendMessage(tabs[0].id, {type: 'isStylesheetSet'}, stylesheetHref => {
       displayStylesheetToggle.checked = stylesheetHref != null;
+      displayStylesheetToggle.dispatchEvent(new Event('input'));
       disableWarningsToggle.checked = stylesheetHref.includes('checka11y-errors.css');
       browser.browserAction.setBadgeText({text: stylesheetHref ? 'On' : '', tabId: tabs[0].id});
     });
+  });
+
+  disableWarningsToggle.disabled = !displayStylesheetToggle.checked;
+
+  displayStylesheetToggle.addEventListener('input', () => {
+    disableWarningsToggle.disabled = !displayStylesheetToggle.checked;
   });
 
   displayStylesheetToggle.onchange = () => sendAction('toggleStylesheet', displayStylesheetToggle.checked, disableWarningsToggle.checked);

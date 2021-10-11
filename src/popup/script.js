@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 
   const toggleStylesheet = () => {
     browser.tabs.query({active: true, currentWindow: true}, tabs => {
-        browser.browserAction.setBadgeText({text: displayStylesheetToggle.checked ? 'On' : '', tabId: tabs[0].id});
+        browser.action.setBadgeText({text: displayStylesheetToggle.checked ? 'On' : '', tabId: tabs[0].id});
         browser.tabs.sendMessage(tabs[0].id, {type: 'toggleStylesheet', displayStylesheet: displayStylesheetToggle.checked, disableWarnings: disableWarningsToggle.checked});
     });
   }
@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
       displayStylesheetToggle.checked = stylesheetHref != null;
       displayStylesheetToggle.dispatchEvent(new Event('input'));
       disableWarningsToggle.checked = stylesheetHref.includes('checka11y-errors.css');
-      browser.browserAction.setBadgeText({text: stylesheetHref ? 'On' : '', tabId: tabs[0].id});
+      browser.action.setBadgeText({text: stylesheetHref ? 'On' : '', tabId: tabs[0].id});
     });
   });
 

@@ -29,7 +29,7 @@ function applyChecka11y(displayStylesheet, disableWarnings) {
     if (displayStylesheet) {
         var a = document.createElement('link');
         a.rel='stylesheet';
-        a.href=`https://cdn.jsdelivr.net/npm/checka11y-css/checka11y${disableWarnings ? '-errors' : ''}.css`;
+        a.href=`https://cdn.jsdelivr.net/npm/checka11y-css/checka11y${disableWarnings ? '-errors' : ''}.min.css`;
         a.id = stylesheetId;
         document.head.appendChild(a);
     }

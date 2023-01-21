@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
     browser.tabs.sendMessage(tabs[0].id, {type: 'isStylesheetSet'}, stylesheetHref => {
       displayStylesheetToggle.checked = stylesheetHref != null;
       displayStylesheetToggle.dispatchEvent(new Event('input'));
-      disableWarningsToggle.checked = stylesheetHref.includes('checka11y-errors.css');
+      disableWarningsToggle.checked = stylesheetHref.includes('checka11y-errors.min.css');
       browser.browserAction.setBadgeText({text: stylesheetHref ? 'On' : '', tabId: tabs[0].id});
     });
   });

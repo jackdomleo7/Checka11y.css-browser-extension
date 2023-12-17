@@ -136,8 +136,7 @@ hr {
 .buttons {
   display: grid;
   gap: 0.5rem;
-  grid-template-areas: 'coffee coffee'
-                       'docs codes'
+  grid-template-areas: 'docs codes'
                        'github github';
 }
 
@@ -172,43 +171,20 @@ hr {
   grid-area: codes;
 }
 
-.button--coffee {
-  background-color: #ff813f;
-  font-family: Cookie, cursive;
-  font-size: 1.25rem;
-  letter-spacing: 0.0375rem;
-  grid-area: coffee;
-}
-
 .button--github {
   background-color: #302f2f;
   grid-area: github;
 }
 
-.button--coffee svg, .button--github svg {
+.button--github svg {
   border: none;
   box-shadow: none;
   height: 1.375rem;
   width: 1.375rem;
 }
 
-.button--coffee svg {
-  transition: 160ms ease;
-  transform-origin: bottom;
-}
-
-.button--coffee span, .button--github span {
+.button--github span {
   margin-left: 0.25rem;
-}
-
-.button--coffee:hover svg, .button--coffee:focus svg {
-  transform: rotate(-6deg);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .button--coffee:hover svg, .button--coffee:focus svg {
-    transform: none;
-  }
 }
 
 @media (prefers-color-scheme: dark) {

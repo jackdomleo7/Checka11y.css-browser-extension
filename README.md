@@ -2,8 +2,6 @@
 
   ![Checka11y.css logo](./assets/checka11y.png)
 
-  <a href="https://www.buymeacoffee.com/jackdomleo7" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 190px !important;" height="50" width="190" ></a> <a href="https://www.producthunt.com/posts/checka11y-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-checka11y-css" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=269866&theme=light" alt="Checka11y.css - A CSS stylesheet to quickly highlight a11y concerns. | Product Hunt" style="width: auto; height: 50px;"/></a>
-
   [![MIT License](https://img.shields.io/badge/License-MIT-important)](https://github.com/jackdomleo7/Checka11y.css-browser-extension/blob/master/LICENSE) ![GitHub manifest version (path)](https://img.shields.io/github/manifest-json/v/jackdomleo7/Checka11y.css-browser-extension/master)
 
   [![GitHub stars](https://img.shields.io/github/stars/jackdomleo7/Checka11y.css-browser-extension?style=social)](https://github.com/jackdomleo7/Checka11y.css-browser-extension/stargazers) [![Chrome Web Store](https://img.shields.io/chrome-web-store/users/npkoehgjmnffjdaelommnfjkflenbfaa?label=Chrome%20Web%20Store%20users&logo=google-chrome&style=social)](https://chrome.google.com/webstore/detail/checka11ycss/npkoehgjmnffjdaelommnfjkflenbfaa) [![Mozilla Add-on](https://img.shields.io/amo/users/checka11y-css?label=Firefox%20Add-on%20users&logo=firefox&style=social)](https://addons.mozilla.org/en-GB/firefox/addon/checka11y-css)

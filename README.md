@@ -20,11 +20,7 @@
 
 _Lightweight_ &bull; _Modern_ &bull; _Accessibile_ &bull; _Customisable_ &bull; _Simple_
 
-The first line of defence for testing accessibility.
-
 Designed to quickly highlight some common accessibility errors and warnings that can be easily and quickly rectified.
-
-Recommended before turning to automation tools and scanners such as Lighthouse on Chrome.
 
 This is the browser extension for [Checka11y.css](https://github.com/jackdomleo7/Checka11y.css). It allows you to toggle on and off the Checka11y.css stylesheet on any webpage so you can debug your webpage's accessibility.
 
